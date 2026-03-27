@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bogong Painting Melbourne — Professional interior and exterior painting. New builds, repaints, quality guaranteed.">
+<title>Bogong Painting — Melbourne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0c0e;
+  --surface: #111114;
+  --surface2: #161619;
+  --gold: #c8a96e;
+  --gold-dim: rgba(200,169,110,0.15);
+  --gold-border: rgba(200,169,110,0.2);
+  --white: #f0ece4;
+  --white-mid: rgba(240,236,228,0.6);
+  --white-dim: rgba(240,236,228,0.35);
+  --accent: #8fb896;
+  --rule: rgba(240,236,228,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display: flex; justify-content:space-between; align-items:center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, rgba(12,12,14,0.95), transparent);
+  backdrop-filter: blur(8px);
+}
+
+.nav-logo {
+  display:flex; align-items:center; gap:10px;
+  text-decoration:none;
+}
+.nav-logo-mark {
+  width:36px; height:36px;
+  border: 1px solid var(--gold-border);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px;
+}
+.nav-wordmark {
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px; font-weight:400;
+  color: var(--white);
+  letter-spacing:1px;
+}
+
+.nav-links {
+  display:flex; gap:32px; list-style:none;
+}
+.nav-links a {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--white-mid); text-decoration:none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--gold); text-decoration:none;
+  border: 1px solid var(--gold-border);
+  padding: 10px 20px;
+  transition: all 0.2s;
+}
+.nav-cta:hover {
+  background: var(--gold-dim);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction:column; justify-content:center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(200,169,110,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(143,184,150,0.04) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position:absolute; inset:0; z-index:0; opacity:0.03;
+  background-image: linear-gradient(var(--gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-inner { position:relative; z-index:1; max-width:900px; }
+
+.hero-eyebrow {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:4px; text-transform:uppercase;
+  color: var(--gold); margin-bottom:24px;
+  display:flex; align-items:center; gap:12px;
+}
+.hero-eyebrow::before {
+  content:''; display:block; width:40px; height:1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight:300; line-height:1.0;
+  color: var(--white);
+  margin-bottom:32px;
+}
+.hero-title em {
+  font-style:italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size:16px; color: var(--white-mid);
+  max-width:500px; line-height:1.8;
+  margin-bottom:48px;
+}
+
+.hero-actions {
+  display:flex; gap:16px; flex-wrap:wrap;
+}
+
+.btn-primary {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--bg); background: var(--gold);
+  border: none; padding: 16px 32px;
+  cursor:pointer; text-decoration:none;
+  transition: all 0.2s;
+  display:inline-block;
+}
+.btn-primary:hover { background: #d4b87a; }
+
+.btn-secondary {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--gold); background: transparent;
+  border: 1px solid var(--gold-border);
+  padding: 16px 32px; cursor:pointer; text-decoration:none;
+  transition: all 0.2s; display:inline-block;
+}
+.btn-secondary:hover { background: var(--gold-dim); }
+
+.hero-stats {
+  position:absolute; bottom:60px; right:40px; z-index:1;
+  display:flex; gap:40px;
+}
+.stat { text-align:right; }
+.stat-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px; font-weight:300; color: var(--gold);
+}
+.stat-label {
+  font-family:'JetBrains Mono', monospace;
+  font-size:8px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--white-dim);
+}
+
+/* SECTION */
+section { padding: 100px 40px; }
+.section-inner { max-width:1100px; margin:0 auto; }
+
+.section-label {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:4px; text-transform:uppercase;
+  color: var(--gold); margin-bottom:16px;
+}
+
+.section-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight:300; line-height:1.2;
+  color: var(--white); margin-bottom:20px;
+}
+.section-title em { font-style:italic; color: var(--gold); }
+
+.section-sub {
+  font-size:15px; color: var(--white-mid);
+  max-width:560px; line-height:1.8;
+  margin-bottom:60px;
+}
+
+/* SERVICES */
+#services { background: var(--surface); }
+
+.services-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:1px; background: var(--rule);
+}
+
+.service-card {
+  background: var(--surface);
+  padding:40px 32px;
+  transition: background 0.2s;
+  position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:2px;
+  background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s;
+  transform-origin: left;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { background: var(--surface2); }
+
+.service-icon {
+  font-size:28px; margin-bottom:20px;
+}
+.service-name {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; font-weight:400;
+  color: var(--white); margin-bottom:10px;
+}
+.service-desc {
+  font-size:13px; color: var(--white-dim);
+  line-height:1.7;
+}
+
+/* WHY US */
+.why-grid {
+  display:grid; grid-template-columns: 1fr 1fr;
+  gap:60px; align-items:center;
+}
+.why-points { display:flex; flex-direction:column; gap:32px; }
+.why-point { display:flex; gap:20px; align-items:flex-start; }
+.why-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px; font-weight:300; color: var(--gold);
+  line-height:1; flex-shrink:0;
+}
+.why-point-title {
+  font-size:15px; font-weight:500;
+  color: var(--white); margin-bottom:6px;
+}
+.why-point-desc {
+  font-size:13px; color: var(--white-dim); line-height:1.7;
+}
+
+.why-visual {
+  position:relative; height:400px;
+  background: var(--surface2);
+  border: 1px solid var(--rule);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.why-visual-inner {
+  text-align:center;
+}
+.why-visual-text {
+  font-family:'Cormorant Garamond', serif;
+  font-size:72px; font-weight:300;
+  color: rgba(200,169,110,0.08);
+  line-height:1;
+}
+.why-visual-badge {
+  position:absolute; bottom:24px; right:24px;
+  background: var(--gold);
+  color: var(--bg);
+  font-family:'JetBrains Mono', monospace;
+  font-size:8px; letter-spacing:3px; text-transform:uppercase;
+  padding: 8px 14px;
+}
+
+/* PROCESS */
+#process { background: var(--surface); }
+
+.process-steps {
+  display:grid; grid-template-columns: repeat(4, 1fr);
+  gap:1px; background: var(--rule);
+}
+.process-step {
+  background: var(--surface);
+  padding:40px 28px;
+}
+.step-num {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--gold); margin-bottom:16px;
+}
+.step-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px; font-weight:400;
+  color: var(--white); margin-bottom:10px;
+}
+.step-desc {
+  font-size:12px; color: var(--white-dim); line-height:1.7;
+}
+
+/* CONTACT */
+#contact { background: var(--bg); }
+
+.contact-grid {
+  display:grid; grid-template-columns: 1fr 1fr;
+  gap:80px;
+}
+
+.contact-info { display:flex; flex-direction:column; gap:32px; }
+.contact-item {}
+.contact-item-label {
+  font-family:'JetBrains Mono', monospace;
+  font-size:8px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--gold); margin-bottom:8px;
+}
+.contact-item-value {
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; font-weight:400; color: var(--white);
+}
+
+.contact-form { display:flex; flex-direction:column; gap:16px; }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-label {
+  font-family:'JetBrains Mono', monospace;
+  font-size:8px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--white-dim);
+}
+.form-input, .form-select, .form-textarea {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  color: var(--white);
+  font-family:'DM Sans', sans-serif;
+  font-size:14px; padding:12px 16px;
+  outline:none; transition: border-color 0.2s;
+  width:100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold-border);
+}
+.form-select { appearance:none; cursor:pointer; }
+.form-textarea { resize:none; }
+.form-select option { background: var(--surface); }
+
+.form-status {
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:2px; text-transform:uppercase;
+  color: var(--gold); min-height:16px; text-align:center;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--rule);
+  padding:40px;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:16px;
+}
+.footer-brand {
+  font-family:'Cormorant Garamond', serif;
+  font-size:16px; color: var(--white-mid);
+}
+.footer-bogong {
+  font-family:'JetBrains Mono', monospace;
+  font-size:8px; letter-spacing:3px; text-transform:uppercase;
+  color: var(--white-dim);
+}
+.footer-bogong a { color: var(--gold); text-decoration:none; }
+.footer-bogong a:hover { text-decoration:underline; }
+
+/* FLOATING CHAT */
+#floatingChat {
+  position:fixed; right:0; top:50%;
+  transform: translateY(-50%); z-index:200;
+}
+#floatBtn {
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:4px;
+  background:#1a1208; border:1px solid rgba(200,169,110,0.4);
+  border-right:none; color:#f0c96a; cursor:pointer;
+  padding:14px 10px;
+  box-shadow:-4px 0 20px rgba(0,0,0,0.3);
+  transition: all 0.2s;
+}
+#floatBtn:hover { background: rgba(200,169,110,0.1); }
+
+#floatingPanel {
+  display:none; position:fixed; right:0; top:50%;
+  transform:translateY(-50%); z-index:201;
+  width:340px; max-height:70vh;
+  background:#1a1208;
+  border:1px solid rgba(200,169,110,0.25); border-right:none;
+  box-shadow:-8px 0 40px rgba(0,0,0,0.5);
+  flex-direction:column;
+}
+.float-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 16px;
+  border-bottom:1px solid rgba(200,169,110,0.15);
+}
+.float-title {
+  display:flex; align-items:center; gap:8px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:16px; color:#f0c96a; font-style:italic;
+}
+.float-close {
+  background:none; border:none;
+  color:rgba(255,255,255,0.4); cursor:pointer;
+  font-size:18px; padding:2px 6px;
+}
+#floatMessages {
+  flex:1; overflow-y:auto; padding:14px;
+  display:flex; flex-direction:column; gap:10px;
+  max-height:calc(70vh - 110px);
+}
+.float-msg-bot {
+  background:rgba(200,169,110,0.08);
+  border:1px solid rgba(200,169,110,0.15);
+  padding:10px 12px; font-size:12px;
+  color:rgba(255,255,255,0.65); line-height:1.6;
+}
+.float-msg-user {
+  text-align:right;
+}
+.float-msg-user span {
+  display:inline-block; max-width:85%;
+  background:rgba(200,169,110,0.15);
+  border:1px solid rgba(200,169,110,0.25);
+  padding:8px 12px; font-size:12px;
+  color:rgba(255,255,255,0.8); line-height:1.6;
+}
+.float-input-row {
+  padding:10px;
+  border-top:1px solid rgba(200,169,110,0.15);
+  display:flex; gap:8px;
+}
+#floatInput {
+  flex:1; background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.8);
+  font-family:'DM Sans', sans-serif;
+  font-size:12px; padding:8px 10px;
+  resize:none; outline:none; max-height:80px;
+}
+.float-send {
+  background:rgba(200,169,110,0.15);
+  border:1px solid rgba(200,169,110,0.3);
+  color:#f0c96a; cursor:pointer;
+  padding:8px 12px; font-size:14px;
+  align-self:flex-end;
+}
+
+/* MOTH 3D LOGO */
+.moth-scene {
+  width:380px; height:380px;
+  perspective: 800px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.moth-wrap {
+  width:280px; height:280px;
+  transform-style: preserve-3d;
+  animation: mothFloat 6s ease-in-out infinite, mothRotate 20s linear infinite;
+  position:relative;
+}
+@keyframes mothFloat {
+  0%,100% { transform: translateY(0px) rotateX(10deg); }
+  50% { transform: translateY(-18px) rotateX(5deg); }
+}
+@keyframes mothRotate {
+  0% { transform: rotateY(0deg) rotateX(8deg); }
+  50% { transform: rotateY(15deg) rotateX(12deg); }
+  100% { transform: rotateY(0deg) rotateX(8deg); }
+}
+.moth-svg {
+  width:100%; height:100%;
+  filter: drop-shadow(0 0 24px rgba(200,169,110,0.5))
+          drop-shadow(0 0 60px rgba(200,169,110,0.2));
+}
+.moth-ring {
+  position:absolute; border-radius:50%;
+  border:1px solid rgba(200,169,110,0.2);
+  animation: ringPulse 4s ease-in-out infinite;
+}
+.moth-ring-1 { width:320px; height:320px; top:-20px; left:-20px; animation-delay:0s; }
+.moth-ring-2 { width:360px; height:360px; top:-40px; left:-40px; animation-delay:0.8s; border-color:rgba(200,169,110,0.1); }
+.moth-ring-3 { width:400px; height:400px; top:-60px; left:-60px; animation-delay:1.6s; border-color:rgba(200,169,110,0.05); }
+@keyframes ringPulse {
+  0%,100% { opacity:0.4; transform:scale(1); }
+  50% { opacity:1; transform:scale(1.03); }
+}
+.moth-glow {
+  position:absolute; inset:0; border-radius:50%;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(200,169,110,0.12) 0%, transparent 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%,100% { opacity:0.6; }
+  50% { opacity:1; }
+}
+
+/* HERO 2-COLUMN */
+.hero-layout {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+  align-items:center;
+  position:relative; z-index:1;
+  max-width:1200px;
+}
+.hero-right {
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* GALLERY SECTION */
+#gallery { background: var(--bg); }
+.gallery-slider {
+  position:relative; overflow:hidden;
+  border:1px solid var(--rule);
+}
+.gallery-track {
+  display:flex;
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.gallery-slide {
+  min-width:100%; height:500px;
+  background: var(--surface2);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; position:relative; overflow:hidden;
+}
+.gallery-slide img {
+  width:100%; height:100%; object-fit:cover;
+  transition: transform 0.6s ease;
+}
+.gallery-slide:hover img { transform:scale(1.03); }
+.gallery-slide-label {
+  position:absolute; bottom:0; left:0; right:0;
+  background: linear-gradient(transparent, rgba(10,10,12,0.85));
+  padding:32px 24px 20px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:18px; color:var(--white);
+}
+.gallery-placeholder {
+  width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; color:var(--white-dim);
+}
+.gallery-placeholder-icon { font-size:40px; opacity:0.3; }
+.gallery-placeholder-text { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:3px; text-transform:uppercase; opacity:0.4; }
+.gallery-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 0 0;
+}
+.gallery-btn {
+  background:none; border:1px solid var(--rule);
+  color:var(--gold); cursor:pointer;
+  width:44px; height:44px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; transition:all 0.2s;
+}
+.gallery-btn:hover { background:var(--gold-dim); border-color:var(--gold-border); }
+.gallery-dots {
+  display:flex; gap:8px;
+}
+.gallery-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--rule); cursor:pointer;
+  transition:all 0.2s;
+}
+.gallery-dot.active { background:var(--gold); transform:scale(1.4); }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(24px); transition:all 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media (max-width:768px) {
+  nav { padding:16px 20px; }
+  .nav-links { display:none; }
+  .hero { padding:100px 20px 60px; }
+  .hero-layout { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .hero-stats { display:none; }
+  section { padding:60px 20px; }
+  .why-grid { grid-template-columns:1fr; }
+  .why-visual { display:none; }
+  .process-steps { grid-template-columns:1fr 1fr; }
+  .contact-grid { grid-template-columns:1fr; gap:40px; }
+  .form-row { grid-template-columns:1fr; }
+  footer { flex-direction:column; text-align:center; padding:24px 20px; }
+  #floatingPanel { width:90vw; }
+  .gallery-slide { height:280px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">🦋</div>
+    <span class="nav-wordmark">Bogong Painting</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-layout">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Melbourne's painting specialists</div>
+      <h1 class="hero-title">
+        We don't just paint.<br>
+        We <em>transform</em><br>
+        your home.
+      </h1>
+      <p class="hero-sub">
+        Interior, exterior, new builds and repaints.
+        Precision work, clean finish, on time — every time.
+        Serving Melbourne and surrounding suburbs.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a free quote</a>
+        <a href="#services" class="btn-secondary">Our services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="moth-scene">
+        <div class="moth-glow"></div>
+        <div class="moth-wrap">
+          <div class="moth-ring moth-ring-1"></div>
+          <div class="moth-ring moth-ring-2"></div>
+          <div class="moth-ring moth-ring-3"></div>
+          <svg class="moth-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="wingGrad1" cx="30%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#f0d9a0" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#c8a96e" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#8a6030" stop-opacity="0.4"/>
+              </radialGradient>
+              <radialGradient id="wingGrad2" cx="70%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#f0d9a0" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#c8a96e" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#8a6030" stop-opacity="0.4"/>
+              </radialGradient>
+              <filter id="wingGlow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="bodyGlow">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Left upper wing -->
+            <path d="M100,85 C85,60 50,30 20,40 C5,45 8,70 25,80 C45,92 75,88 100,85Z"
+              fill="url(#wingGrad1)" stroke="#c8a96e" stroke-width="0.8" filter="url(#wingGlow)" opacity="0.92"/>
+            <!-- Left lower wing -->
+            <path d="M100,95 C80,100 45,105 25,120 C10,132 20,150 40,145 C65,138 88,115 100,95Z"
+              fill="url(#wingGrad1)" stroke="#c8a96e" stroke-width="0.8" filter="url(#wingGlow)" opacity="0.78"/>
+            <!-- Right upper wing -->
+            <path d="M100,85 C115,60 150,30 180,40 C195,45 192,70 175,80 C155,92 125,88 100,85Z"
+              fill="url(#wingGrad2)" stroke="#c8a96e" stroke-width="0.8" filter="url(#wingGlow)" opacity="0.92"/>
+            <!-- Right lower wing -->
+            <path d="M100,95 C120,100 155,105 175,120 C190,132 180,150 160,145 C135,138 112,115 100,95Z"
+              fill="url(#wingGrad2)" stroke="#c8a96e" stroke-width="0.8" filter="url(#wingGlow)" opacity="0.78"/>
+            <!-- Wing markings left -->
+            <ellipse cx="60" cy="62" rx="12" ry="8" fill="rgba(200,169,110,0.2)" stroke="rgba(200,169,110,0.4)" stroke-width="0.5"/>
+            <ellipse cx="45" cy="118" rx="10" ry="7" fill="rgba(200,169,110,0.15)" stroke="rgba(200,169,110,0.3)" stroke-width="0.5"/>
+            <!-- Wing markings right -->
+            <ellipse cx="140" cy="62" rx="12" ry="8" fill="rgba(200,169,110,0.2)" stroke="rgba(200,169,110,0.4)" stroke-width="0.5"/>
+            <ellipse cx="155" cy="118" rx="10" ry="7" fill="rgba(200,169,110,0.15)" stroke="rgba(200,169,110,0.3)" stroke-width="0.5"/>
+            <!-- Body -->
+            <ellipse cx="100" cy="100" rx="5" ry="30"
+              fill="#c8a96e" filter="url(#bodyGlow)" opacity="0.95"/>
+            <!-- Head -->
+            <circle cx="100" cy="68" r="6" fill="#d4b87a" filter="url(#bodyGlow)"/>
+            <!-- Antennae left -->
+            <path d="M97,64 C90,50 78,42 72,34" stroke="#c8a96e" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <circle cx="72" cy="34" r="2.5" fill="#c8a96e" opacity="0.8"/>
+            <!-- Antennae right -->
+            <path d="M103,64 C110,50 122,42 128,34" stroke="#c8a96e" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <circle cx="128" cy="34" r="2.5" fill="#c8a96e" opacity="0.8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Years experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Homes painted</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-label">Our work</div>
+    <h2 class="section-title">Recent <em>projects.</em></h2>
+    <p class="section-sub">Every job finished to the same standard — the one we'd be proud to show you.</p>
+    <div class="gallery-slider reveal">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon">🖼</div>
+            <div class="gallery-placeholder-text">Photo coming soon</div>
+          </div>
+          <div class="gallery-slide-label">Interior — Feature Wall, Brighton</div>
+        </div>
+        <div class="gallery-slide">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon">🖼</div>
+            <div class="gallery-placeholder-text">Photo coming soon</div>
+          </div>
+          <div class="gallery-slide-label">Exterior — Weatherboard, Mordialloc</div>
+        </div>
+        <div class="gallery-slide">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon">🖼</div>
+            <div class="gallery-placeholder-text">Photo coming soon</div>
+          </div>
+          <div class="gallery-slide-label">New Build — Frankston</div>
+        </div>
+        <div class="gallery-slide">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon">🖼</div>
+            <div class="gallery-placeholder-text">Photo coming soon</div>
+          </div>
+          <div class="gallery-slide-label">Repaint & Refresh — Sandringham</div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-nav">
+      <button class="gallery-btn" onclick="galleryPrev()">←</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <button class="gallery-btn" onclick="galleryNext()">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">Every surface. <em>Every finish.</em></h2>
+    <p class="section-sub">From a single room to a full new build — we bring the same attention to detail to every job.</p>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <div class="service-name">Interior Painting</div>
+        <div class="service-desc">Walls, ceilings, trims and feature walls. We prep properly, use premium paints and leave your home spotless.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <div class="service-name">Exterior Painting</div>
+        <div class="service-desc">Weatherboard, render, brick and fascia. We protect your home from Melbourne's elements — beautifully.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <div class="service-name">New Build</div>
+        <div class="service-desc">Working with builders and developers from slab to handover. Reliable, on schedule, builder-grade finish.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Repaint & Refresh</div>
+        <div class="service-desc">Transform your space without moving out. We work around your schedule with minimal disruption.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Bogong</div>
+        <h2 class="section-title">Quality you can <em>see.</em></h2>
+        <div class="why-points reveal">
+          <div class="why-point">
+            <div class="why-num">01</div>
+            <div>
+              <div class="why-point-title">Proper preparation</div>
+              <div class="why-point-desc">We sand, fill, prime and protect before a drop of paint goes on. That's why our finishes last.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">02</div>
+            <div>
+              <div class="why-point-title">Premium materials</div>
+              <div class="why-point-desc">Dulux, Taubmans and Porter's paints. Right product for every surface, inside and out.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">03</div>
+            <div>
+              <div class="why-point-title">On time, every time</div>
+              <div class="why-point-desc">We show up when we say we will. We finish when we say we will. No excuses.</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">04</div>
+            <div>
+              <div class="why-point-title">Fully insured</div>
+              <div class="why-point-desc">Public liability insurance and professional guarantee on all work. Your home is in safe hands.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-visual-inner">
+          <div class="why-visual-text">B</div>
+        </div>
+        <div class="why-visual-badge">Melbourne Based</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Simple. <em>Transparent.</em> Done right.</h2>
+    <p class="section-sub">No surprises, no hidden costs. Just a straight process from first call to final brushstroke.</p>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-num">Step 01</div>
+        <div class="step-title">Free Quote</div>
+        <div class="step-desc">We visit your property, assess the scope and give you a clear, itemised quote. No obligation.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Step 02</div>
+        <div class="step-title">Colour Advice</div>
+        <div class="step-desc">Not sure what colour? Our AI colour consultant helps you find the perfect palette for your space.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Step 03</div>
+        <div class="step-title">Preparation</div>
+        <div class="step-desc">We protect your furniture, fill cracks, sand surfaces and prime. The prep is what makes the difference.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">Step 04</div>
+        <div class="step-title">Handover</div>
+        <div class="step-desc">Final walkthrough with you. We don't leave until you're 100% happy with every surface.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Let's talk about <em>your home.</em></h2>
+        <p class="section-sub">Free quotes, no obligation. We service Melbourne and all surrounding suburbs.</p>
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">0499 339 198</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-label">Service area</div>
+            <div class="contact-item-value">Melbourne & Suburbs</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-label">Response time</div>
+            <div class="contact-item-value">Same day</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form reveal" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your name</label>
+              <input type="text" id="cName" class="form-input" placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="tel" id="cPhone" class="form-input" placeholder="0400 000 000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Suburb</label>
+            <input type="text" id="cSuburb" class="form-input" placeholder="Mordialloc">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service needed</label>
+            <select id="cService" class="form-select">
+              <option value="">Select service...</option>
+              <option>Interior painting</option>
+              <option>Exterior painting</option>
+              <option>New build</option>
+              <option>Repaint & refresh</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tell us about your project</label>
+            <textarea id="cMessage" class="form-textarea" rows="4" placeholder="Number of rooms, current condition, timeline..."></textarea>
+          </div>
+          <button type="button" class="btn-primary" onclick="submitPaintForm()" style="width:100%">Send enquiry</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Bogong Painting — Melbourne</div>
+  <div class="footer-bogong">
+    Built by <a href="https://bogongai.net" target="_blank">Bogong AI Lab</a> — Melbourne's AI solutions studio
+  </div>
+</footer>
+
+<!-- FLOATING CHAT -->
+<div id="floatingChat">
+  <button id="floatBtn" onclick="toggleChat()">
+    <span style="font-size:20px">🎨</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;color:rgba(240,201,106,0.7);text-transform:uppercase;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);margin-top:4px">Colours</span>
+  </button>
+</div>
+
+<div id="floatingPanel">
+  <div class="float-header">
+    <div class="float-title"><span>🎨</span> Colour Advisor</div>
+    <button class="float-close" onclick="toggleChat()">×</button>
+  </div>
+  <div id="floatMessages">
+    <div class="float-msg-bot">
+      Hi! I'm your AI colour advisor. Tell me about your space — room type, natural light, existing furniture — and I'll suggest the perfect palette. 🎨
+    </div>
+  </div>
+  <div class="float-input-row">
+    <textarea id="floatInput" placeholder="Describe your room..." rows="1"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"
+      oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,80)+'px'"></textarea>
+    <button class="float-send" onclick="sendChat()">→</button>
+  </div>
+</div>
+
+<script>
+// Gallery
+var galIdx = 0;
+var galSlides = document.querySelectorAll('.gallery-slide');
+var galTotal = galSlides.length;
+var dotsEl = document.getElementById('galleryDots');
+
+// Dots oluştur
+for (var i = 0; i < galTotal; i++) {
+  var dot = document.createElement('div');
+  dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('data-i', i);
+  dot.onclick = function() { goGallery(parseInt(this.getAttribute('data-i'))); };
+  dotsEl.appendChild(dot);
+}
+
+function goGallery(n) {
+  galIdx = (n + galTotal) % galTotal;
+  document.getElementById('galleryTrack').style.transform = 'translateX(-' + (galIdx * 100) + '%)';
+  document.querySelectorAll('.gallery-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === galIdx);
+  });
+}
+function galleryNext() { goGallery(galIdx + 1); }
+function galleryPrev() { goGallery(galIdx - 1); }
+
+// Auto-play
+setInterval(function() { galleryNext(); }, 5000);
+
+// Reveal on scroll
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Contact form
+async function submitPaintForm() {
+  var name = document.getElementById('cName').value.trim();
+  var phone = document.getElementById('cPhone').value.trim();
+  var suburb = document.getElementById('cSuburb').value.trim();
+  var service = document.getElementById('cService').value;
+  var message = document.getElementById('cMessage').value.trim();
+  var status = document.getElementById('formStatus');
+
+  if (!name || !phone) {
+    status.textContent = 'Please enter your name and phone.';
+    status.style.color = 'rgba(220,80,80,0.8)';
+    return;
+  }
+
+  var btn = document.querySelector('.contact-form .btn-primary');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  status.textContent = '';
+
+  try {
+    var r = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: phone + '@bogongpainting.com.au',
+        message: 'Phone: ' + phone + '\nSuburb: ' + suburb + '\nService: ' + service + '\n\n' + message
+      })
+    });
+    var d = await r.json();
+    if (d.ok) {
+      btn.textContent = 'Sent ✓';
+      status.textContent = 'Thanks! We will call you shortly.';
+      status.style.color = 'var(--gold)';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e) {
+    btn.textContent = 'Send enquiry';
+    btn.disabled = false;
+    status.textContent = 'Something went wrong. Please call 0499 339 198.';
+    status.style.color = 'rgba(220,80,80,0.8)';
+  }
+}
+
+// Floating chat
+var floatOpen = false;
+var floatHistory = [];
+
+function toggleChat() {
+  floatOpen = !floatOpen;
+  var panel = document.getElementById('floatingPanel');
+  var btn = document.getElementById('floatingChat');
+  if (floatOpen) {
+    panel.style.display = 'flex';
+    panel.style.flexDirection = 'column';
+    btn.style.display = 'none';
+    document.getElementById('floatInput').focus();
+  } else {
+    panel.style.display = 'none';
+    btn.style.display = 'flex';
+  }
+}
+
+async function sendChat() {
+  var input = document.getElementById('floatInput');
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  input.style.height = 'auto';
+
+  addMsg('user', text);
+  floatHistory.push({ role: 'user', content: text });
+  addMsg('bot', '...');
+
+  try {
+    var r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: floatHistory,
+        system: 'You are a friendly colour advisor for Bogong Painting Melbourne. Help customers choose paint colours for their home. Ask about room type, natural light direction, existing furniture colours, and the mood they want to create. Suggest specific Dulux or Taubmans colour names when relevant. Keep responses concise and practical. If they ask about getting a quote, direct them to call 0499 339 198.'
+      })
+    });
+
+    var fullReply = '';
+    var reader = r.body.getReader();
+    var decoder = new TextDecoder();
+
+    while (true) {
+      var res = await reader.read();
+      if (res.done) break;
+      var chunk = decoder.decode(res.value, { stream: true });
+      var lines = chunk.split("\n");
+      for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+        if (!line.startsWith('data: ')) continue;
+        var jsonStr = line.slice(6).trim();
+        if (jsonStr === '[DONE]') continue;
+        try {
+          var evt = JSON.parse(jsonStr);
+          if (evt.text) { fullReply += evt.text; updateLastMsg(fullReply); }
+        } catch(e) {}
+      }
+    }
+
+    if (!fullReply) fullReply = 'Happy to help with colour advice! What type of room are you painting?';
+    floatHistory.push({ role: 'assistant', content: fullReply });
+
+  } catch(e) {
+    updateLastMsg('Connection error. Please call 0499 339 198 directly.');
+  }
+}
+
+function addMsg(role, text) {
+  var msgs = document.getElementById('floatMessages');
+  var div = document.createElement('div');
+  if (role === 'user') {
+    div.className = 'float-msg-user';
+    div.innerHTML = '<span>' + text.replace(/</g,'&lt;') + '</span>';
+  } else {
+    div.className = 'float-msg-bot';
+    div.textContent = text;
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function updateLastMsg(text) {
+  var msgs = document.getElementById('floatMessages');
+  var last = msgs.lastElementChild;
+  if (last && last.className === 'float-msg-bot') last.textContent = text;
+  msgs.scrollTop = msgs.scrollHeight;
+}
+</script>
+</body>
+</html>
